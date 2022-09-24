@@ -35,11 +35,11 @@ while game_is_on and snake.no_intersections():
     screen.update()
     time.sleep(0.1)
     snake.move_snake()
-    print(snake.get_positions())
     if snake.head.distance(food) < 5:
         food.respawn()
         snake.grow()
         score.change()
+        score.update_max_score()
         score.clearing()
         score.appear()
     if abs(snake.head.pos()[0]) > 300 or abs(snake.head.pos()[1]) > 300:
